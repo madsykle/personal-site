@@ -1,34 +1,55 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import ProjectCard from "./components/ProjectCard.jsx";
 import SocialLinks from "./components/SocialLinks.jsx";
 
 const App = () => {
+  const featuredProjects = [
+    {
+      title: "Netflyer",
+      description: "Simple streaming. No ads.",
+      githubUrl: "https://github.com/unknnsb/netflyer",
+      previewUrl: "https://netflyer.vercel.app",
+    },
+    {
+      title: "dotfiles",
+      description: "My Termux + proot dotfiles. Minimal.",
+      githubUrl: "https://github.com/unknnsb/dotfiles",
+      previewUrl: "https://github.com/unknnsb/dotfiles",
+    },
+    {
+      title: "CaNo3",
+      description: "A simple and minimal smoke grande store (client work).",
+      githubUrl: "https://github.com/unknnsb/cano3",
+      previewUrl: "https://cano3.vercel.app",
+    },
+  ];
+
   return (
-    <section id="about" className="container-pro">
+    <section id="home" className="container-pro">
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: [0.2, 0.8, 0.2, 1] }}
         className="py-10 md:py-16"
       >
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-          {/* Left */}
+        <header className="grid gap-10 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-7">
             <p className="font-mono text-xs tracking-[0.28em] text-muted">
               WNABE’ELIOT
             </p>
 
-            <h1 className="mt-4 font-serif text-[42px] leading-[1.05] tracking-[-0.02em] text-text md:text-[56px]">
+            <h1 className="mt-4 font-serif text-[42px] leading-[1.05] tracking-[-0.02em] text-text md:text-[58px]">
               Nesbeer.
             </h1>
 
-            <div className="mt-5 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center rounded-full border border-border/70 bg-surface/60 px-3 py-1 font-mono text-[11px] tracking-[0.22em] text-muted">
                 [ fsociety ]
               </span>
 
-              <span className="text-sm text-muted">
+              <span className="text-sm text-muted ml-1">
                 16 · building things on a phone
               </span>
             </div>
@@ -41,26 +62,118 @@ const App = () => {
               <p>
                 not trying to be a dev god. just making things i’d wanna use.
               </p>
-              <p className="text-text/75">
-                react · next.js · tailwind
-              </p>
+              <p className="text-text/75">react · next.js · tailwind</p>
             </div>
-          </div>
+
+            <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <Link
+                to="/works"
+                className="inline-flex items-center justify-center rounded-full border border-border/70 bg-surface px-5 py-2 text-sm text-text/90 transition-colors hover:border-border hover:text-text focus-visible:outline-none"
+              >
+                View archives
+              </Link>
+
+              <Link
+                to="/journal"
+                className="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm text-muted underline decoration-border underline-offset-8 transition-colors hover:text-text hover:decoration-accent focus-visible:outline-none"
+              >
+                Read journal
+              </Link>
+            </div>
+
+            <div className="mt-7">
+              <p className="mb-3 font-mono text-[11px] tracking-[0.22em] text-muted">
+                FIND ME
+              </p>
+              <SocialLinks />
+            </div>
+
 
           <div className="lg:col-span-5">
-            <div className="card p-6">
-              <p className="text-sm leading-relaxed text-text/80">
-                <span className="font-mono text-xs tracking-[0.22em] text-muted">
-                  NOTE
-                </span>
-                <br />
-                <span className="mt-3 block italic text-muted">
-                  ‘i don’t exist in real life.’
-                </span>
+            <div className="card p-6 md:p-7">
+              <p className="font-mono text-[11px] tracking-[0.22em] text-muted">
+                NOTE
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-text/80 italic">
+                ‘i don’t exist in real life.’
+              </p>
+
+              <div className="mt-6 h-px w-full bg-border/70" />
+
+              <p className="mt-6 text-sm leading-relaxed text-muted">
+                Building things that i love. Keeping it minimal.
               </p>
             </div>
           </div>
-          <SocialLinks className="mt-10 justify-center lg:col-span-12" />
+        </header>
+
+        <div className="mt-14 md:mt-18">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="font-mono text-xs tracking-[0.28em] text-muted">
+                FEATURED
+              </p>
+              <h2 className="mt-3 font-serif text-[28px] leading-[1.1] tracking-[-0.02em] text-text md:text-[34px]">
+                Projects worth opening.
+              </h2>
+            </div>
+
+            <Link
+              to="/works"
+              className="hidden sm:inline text-sm text-muted underline decoration-border underline-offset-8 transition-colors hover:text-text hover:decoration-accent focus-visible:outline-none"
+            >
+              All archives
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {featuredProjects.map((p) => (
+              <ProjectCard key={p.title} {...p} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14 md:mt-18">
+          <div className="card p-6 md:p-8">
+            <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-7">
+                <p className="font-mono text-xs tracking-[0.28em] text-muted">
+                  CONTACT
+                </p>
+                <h3 className="mt-3 font-serif text-[26px] leading-[1.12] tracking-[-0.02em] text-text md:text-[30px]">
+                  Want to collaborate?
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  Best way is email or Instagram. If it’s a small idea, keep it
+                  short—shipping fast is the whole thing.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="flex flex-col gap-3">
+                  <a
+                    href="mailto:asnesbeer3@gmail.com"
+                    className="inline-flex items-center justify-center rounded-full border border-border/70 bg-surface px-5 py-2 text-sm text-text/90 transition-colors hover:border-border hover:text-text focus-visible:outline-none"
+                  >
+                    Email me
+                  </a>
+
+                  <a
+                    href="https://instagram.com/nichedonnie"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm text-muted underline decoration-border underline-offset-8 transition-colors hover:text-text hover:decoration-accent focus-visible:outline-none"
+                  >
+                    Instagram
+                  </a>
+
+                  <p className="text-center font-mono text-[11px] tracking-[0.22em] text-muted">
+                    Reply time depends on school + sleep.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>
