@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import SocialLinks from "./components/SocialLinks.jsx";
+
 const App = () => {
   return (
     <section id="about" className="container-pro">
@@ -58,6 +60,7 @@ const App = () => {
               </p>
             </div>
           </div>
+          <SocialLinks className="mt-10 justify-center lg:col-span-12" />
         </div>
       </motion.div>
     </section>
