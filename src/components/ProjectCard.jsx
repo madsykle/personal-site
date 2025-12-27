@@ -2,30 +2,44 @@ import React from "react";
 
 const ProjectCard = ({ title, description, githubUrl, previewUrl }) => {
   return (
-    <div className="bg-[#121212] border border-gray-800 p-5 rounded-md shadow-inner hover:border-gray-600 transition duration-300">
-      <h3 className="text-lg text-gray-100 mb-1 tracking-tight">{title}</h3>
-      <p className="text-sm text-gray-400 mb-4 leading-snug">{description}</p>
+    <article className="card p-6 transition-colors duration-200 hover:border-border/90">
+      <header className="mb-5">
+        <h3 className="font-serif text-[20px] leading-snug text-text tracking-[-0.01em]">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          {description}
+        </p>
+      </header>
 
-      <div className="flex gap-5 text-sm text-gray-500">
-        <a
-          href={previewUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="underline underline-offset-4 hover:text-gray-300"
-        >
-          view
-        </a>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="underline underline-offset-4 hover:text-gray-300"
-        >
-          source
-        </a>
-      </div>
-    </div>
+      <footer className="flex items-center gap-4 text-sm">
+        {previewUrl ? (
+          <a
+            href={previewUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-text/80 hover:text-text transition-colors underline decoration-border underline-offset-8 hover:decoration-accent"
+            aria-label={`Open preview for ${title}`}
+          >
+            View
+          </a>
+        ) : null}
+
+        {githubUrl ? (
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-text/60 hover:text-text transition-colors underline decoration-border underline-offset-8 hover:decoration-accent"
+            aria-label={`Open source code for ${title}`}
+          >
+            Source
+          </a>
+        ) : null}
+      </footer>
+    </article>
   );
 };
 
 export default ProjectCard;
+
