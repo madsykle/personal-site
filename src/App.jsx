@@ -8,22 +8,22 @@ import SocialLinks from "./components/SocialLinks.jsx";
 const App = () => {
   const featuredProjects = [
     {
-      title: "Netflyer",
-      description: "Simple streaming. No ads.",
-      githubUrl: "https://github.com/unknnsb/netflyer",
+      title: "tiak",
+      description: "self-hosted video downloader + gallery",
+      githubUrl: "https://github.com/madsykle/tiak",
+      previewUrl: "https://github.com/madsykle/tiak",
+    },
+    {
+      title: "netflyer",
+      description: "minimal ad-free streaming, rebuilt for performance",
+      githubUrl: "https://github.com/madsykle/netflyer",
       previewUrl: "https://netflyer.vercel.app",
     },
     {
       title: "dotfiles",
-      description: "My Termux + proot dotfiles. Minimal.",
-      githubUrl: "https://github.com/unknnsb/dotfiles",
-      previewUrl: "https://github.com/unknnsb/dotfiles",
-    },
-    {
-      title: "CaNo3",
-      description: "A simple and minimal smoke grande store (client work).",
-      githubUrl: "https://github.com/unknnsb/cano3",
-      previewUrl: "https://cano3.vercel.app",
+      description: "termux + proot setup",
+      githubUrl: "https://github.com/madsykle/dotfiles",
+      previewUrl: "https://github.com/madsykle/dotfiles",
     },
   ];
 
@@ -37,27 +37,21 @@ const App = () => {
       >
         <header className="grid gap-10 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-7">
-            <p className="font-mono text-xs tracking-[0.28em] text-muted">
-              WNABE’ELIOT
-            </p>
-
-            <h1 className="mt-4 font-serif text-[42px] leading-[1.05] tracking-[-0.02em] text-text md:text-[58px]">
+            <h1 className="font-serif text-[42px] leading-[1.05] tracking-[-0.02em] text-text md:text-[58px]">
               Nesbeer.
             </h1>
 
-              <span className="inline-flex items-center rounded-full border border-border/70 bg-surface/60 px-3 py-1 font-mono text-[11px] tracking-[0.22em] text-muted">
-                [ fsociety ]
-              </span>
-
-              <span className="text-sm text-muted ml-1">
+            <div className="mt-4 flex items-center gap-3">
+              <span className="text-sm text-muted">
                 16 · building things on a phone
               </span>
             </div>
 
             <div className="mt-7 space-y-4 text-[15px] leading-relaxed text-muted md:text-[16px]">
               <p>
-                i love coding, cinema, design — all the stuff no one around me
-                gets.
+                i build things i'd actually want to use. into cinema,
+                self-hosting, and tools that don't get in the way. running
+                @thebyteatlas.
               </p>
               <p>
                 not trying to be a dev god. just making things i’d wanna use.
@@ -87,7 +81,7 @@ const App = () => {
               </p>
               <SocialLinks />
             </div>
-
+          </div>
 
           <div className="lg:col-span-5">
             <div className="card p-6 md:p-7">
@@ -181,4 +175,3 @@ const App = () => {
 };
 
 export default App;
-

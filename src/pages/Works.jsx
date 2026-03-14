@@ -3,22 +3,46 @@ import ProjectCard from "../components/ProjectCard.jsx";
 
 const projects = [
   {
-    title: "Netflyer",
-    description: "Simple streaming. No ads.",
-    githubUrl: "https://github.com/unknnsb/netflyer",
+    title: "netflyer",
+    description: "minimal, ad-free movie and series streaming. fast UI, no bloat.",
+    githubUrl: "https://github.com/madsykle/netflyer",
     previewUrl: "https://netflyer.vercel.app",
   },
   {
-    title: "dotfiles",
-    description: "My Termux + proot dotfiles. Minimal.",
-    githubUrl: "https://github.com/unknnsb/dotfiles",
-    previewUrl: "https://github.com/unknnsb/dotfiles",
+    title: "tiak",
+    description: "self-hosted TikTok/Instagram downloader and media gallery.",
+    githubUrl: "https://github.com/madsykle/tiak",
+    previewUrl: "https://github.com/madsykle/tiak",
   },
   {
-    title: "CaNo3",
-    description: "A simple and minimal smoke grande store (client work).",
-    githubUrl: "https://github.com/unknnsb/cano3",
-    previewUrl: "https://cano3.vercel.app",
+    title: "onotor",
+    description: "ultra-lightweight torrent manager for VPS. idle RAM under 100MB.",
+    githubUrl: "https://github.com/madsykle/onotor",
+    previewUrl: "https://github.com/madsykle/onotor",
+  },
+  {
+    title: "promio",
+    description: "local-first web app that refines rough inputs into clean LLM prompts.",
+    githubUrl: "https://github.com/madsykle/promio",
+    previewUrl: "https://github.com/madsykle/promio",
+  },
+  {
+    title: "dotfiles",
+    description: "termux + proot setup. shell tweaks, scripts, configs.",
+    githubUrl: "https://github.com/madsykle/dotfiles",
+    previewUrl: "https://github.com/madsykle/dotfiles",
+  },
+  {
+    title: "crate",
+    description: "[BUILDING] music acquisition app integrating MusicBrainz + slskd + OneDrive.",
+    githubUrl: "https://github.com/madsykle",
+    previewUrl: "#",
+  },
+  {
+    title: "dalonsi",
+    description: "[BUILDING] personal cinema OS. unified film tracking + streaming.",
+    githubUrl: "https://github.com/madsykle",
+    previewUrl: "#",
   },
 ];
 
@@ -52,4 +76,3 @@ const Works = () => {
 };
 
 export default Works;
-

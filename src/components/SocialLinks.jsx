@@ -37,6 +37,22 @@ const Icon = ({ name }) => {
         </svg>
       );
 
+    case "youtube":
+      return (
+        <svg {...common} aria-hidden="true">
+          <path
+            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+            stroke="currentColor"
+            strokeWidth="1.2"
+          />
+          <path
+            d="m9.75 15.02 5.75-3.27-5.75-3.27v6.54z"
+            stroke="currentColor"
+            strokeWidth="1.2"
+          />
+        </svg>
+      );
+
     case "telegram":
       return (
         <svg {...common} aria-hidden="true">
@@ -91,7 +107,8 @@ const Icon = ({ name }) => {
 
 const SocialLinks = ({ className = "" }) => {
   const links = [
-    { label: "GitHub", icon: "github", href: "https://github.com/unknnsb" },
+    { label: "GitHub", icon: "github", href: "https://github.com/madsykle" },
+    { label: "YouTube", icon: "youtube", href: "https://youtube.com/@thebyteatlas" },
     { label: "Instagram", icon: "instagram", href: "https://instagram.com/nichedonnie" },
     { label: "Telegram", icon: "telegram", href: "https://t.me/nesbeer" },
     { label: "Discord", icon: "discord", href: "https://discord.com/users/711145429110358048" },
@@ -124,4 +141,3 @@ const SocialLinks = ({ className = "" }) => {
 };
 
 export default SocialLinks;
-

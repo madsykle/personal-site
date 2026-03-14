@@ -17,7 +17,7 @@ const Header = () => {
           className="font-mono text-xs tracking-[0.22em] text-text/85 hover:text-text transition-colors"
           aria-label="Go to home"
         >
-          ~/NESBEER
+          ~/MADSYKLE
         </Link>
 
         <nav className="flex items-center gap-6">
